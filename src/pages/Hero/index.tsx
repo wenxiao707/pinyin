@@ -49,7 +49,7 @@ export default function Hero() {
   }, [currentCharConfig, bin.schemaType]);
 
   React.useEffect(() => {
-    if (bin.inputPinyin && bin.inputPinyin === currentPinyin) {
+    if (bin.inputPinyin && bin.inputPinyin === currentCharConfig.char) {
       // onChangeBin 需要函数式更新状态，否则后者 inputPinyin 的变化会重置
       // inputTextIndex 的变化，导致无法切换到下一个字符。
       onChangeBin('inputTextIndex', bin.inputTextIndex + 1);
