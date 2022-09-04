@@ -52,8 +52,13 @@ export default function Hero() {
     if (bin.inputPinyin && bin.inputPinyin === currentCharConfig.char) {
       // onChangeBin 需要函数式更新状态，否则后者 inputPinyin 的变化会重置
       // inputTextIndex 的变化，导致无法切换到下一个字符。
-      onChangeBin('inputTextIndex', bin.inputTextIndex + 1);
-      onChangeBin('inputPinyin', '');
+      const id = setTimeout(() => {
+        onChangeBin('inputTextIndex', bin.inputTextIndex + 1);
+        onChangeBin('inputPinyin', '');
+      }, 100);
+      return () => {
+        clearInterval(id);
+      };
     }
   }, [currentPinyin, bin.inputPinyin, bin.inputTextIndex]);
 
