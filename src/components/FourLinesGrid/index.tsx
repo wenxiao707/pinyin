@@ -19,7 +19,7 @@ export default function FourLinesGrid(props: FourLinesGridProps) {
 
   const handleChange = (nextValue = '') => {
     if (original && original.length >= nextValue.length) {
-      setValue(nextValue.toLowerCase());
+      setValue(nextValue);
     }
   };
 
