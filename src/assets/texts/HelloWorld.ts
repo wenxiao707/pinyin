@@ -7,7 +7,7 @@ Registry.text.register({
     {
       type: CharType.Hanzi,
       char: '你',
-      quanpin: 'ni',
+      quanpin: '你',
     },
     {
       type: CharType.Hanzi,
