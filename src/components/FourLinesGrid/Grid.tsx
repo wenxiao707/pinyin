@@ -23,7 +23,7 @@ export default function Grid(props: GridProps) {
         <div
           className={classNames({
             [styles.pinyin]: true,
-            [styles.captialized]: !!original.charAt(1) && capitalized,
+            [styles.captialized]: /*!!original.charAt(1) && capitalized*/ false,
           })}
         >
           {original.split('').map((item, index) => {
